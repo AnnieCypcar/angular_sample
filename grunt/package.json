@@ -1,0 +1,17 @@
+{
+  "name": "paraScroll",
+  "version": "0.2.0",
+  "description": "Parallax Scrolling for Cypcar Design",
+  "author": {
+    "name": "Annie Cypcar",
+    "url": "http://cypcardesign.com/"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.7"
+  }
+}

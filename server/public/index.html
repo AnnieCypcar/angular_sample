@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Amplify Annie Cypcar</title>
+	<link rel="stylesheet" type="text/css" href="css/amplify.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+	<div class="navbar">
+		<header>
+	        <div id="hamburger">
+	            <div></div>
+	            <div></div>
+	            <div></div>
+	        </div>
+	    </header>
+	    <nav id="menu">
+			<ul>
+				<li><a href="#">Menu Link</a></li>
+				<li><a href="#">Another Link</a></li>
+				<li><a href="#">One More</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="container" ng-controller="AppCtrl">
+		<div class="results">			
+			<div class="item" ng-repeat="search_result in search_results" ng-click="setResult(search_result)" style="background-image: url({{search_result.thumbnail_url}})">
+				<a>
+					<span>
+					{{search_result.price_formatted}}
+					</span>
+				</a>
+			</div>	
+		</div>
+		<div class="panel"></div>
+		<div class="info-panel" ng-include src="panelURL"></div>
+	</div>
+	<script type="text/javascript" src="js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular-resource.min.js"></script>
+	<script type="text/javascript" src="js/controllers/app.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/amplify.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "A server for AngularJS",
+  "main": "index.js",
+  "author": "Annie Cypcar",
+  "dependencies": {
+    "express": "~3.1.1"
+  }
+}

@@ -1,0 +1,186 @@
+@import "compass/css3";
+ 
+@import "compass/utilities";
+
+$bgColor: #000;
+$fontColor: #fff;
+
+@mixin menu-text {
+  font: {
+    family: sans-serif;
+    size: 1em;
+    weight: normal;
+  }
+  color: $fontColor;
+}
+
+@mixin large-text {
+  font: {
+    family: sans-serif;
+    size: 1.2em;
+    weight: bold;
+  }
+  color: #999;
+}
+
+@mixin price-text {
+	font: {
+		family: sans-serif;
+		size: 2em;
+		weight: normal;
+	}
+	color: #fff;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	transition: background-color 1s;
+}
+
+.container {
+	@include large-text;
+
+	overflow-x: scroll;
+	overflow-y: hidden;
+	position: relative;
+	white-space: nowrap;
+	height: 100%;
+	transition: margin 1s;
+}
+
+.navbar {
+	header {
+	    position: fixed;
+	    width: 100%;
+	    z-index: 1;
+	    background: $bgColor;
+	    height: 50px;
+
+		#hamburger  {
+			cursor: pointer;
+			display: block;
+			position: relative;
+			top: 10px;
+			left: 10px;
+			height: 25px;
+			width: 25px;
+
+			div {
+				background-color: #343434;
+				border: 1px solid #343434;
+				height: 2px;
+				margin-top: 3px;
+				width: 90%;
+			}
+		}
+	}
+
+	nav {
+	    top: 0px;
+	    position: absolute;
+		margin-left: -200px;
+	    z-index: 999;
+	    height: 100%;
+	    width: 0px;
+	    background: $bgColor;
+	    transition: margin 1s;	
+
+	    ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			position: relative;
+			top: 200px;
+			z-index: 1;
+		}
+
+		li {
+			display: block;
+			text-align: center;
+		}
+
+		a {
+			@include menu-text;
+			
+			text-decoration: none;
+			line-height: 2em;
+		}
+	}
+
+}
+
+.results {
+	position: relative;
+	top: 38%;
+	left: 25px;
+	transition: all 1s;
+
+	.item {
+		@include border-radius(40px);
+		
+		text-align: center;
+		display: inline-block;
+		background-position: 50% 50%;
+		background-size: 150%;
+		margin-right: 25px;
+		width: 140px;
+		height: 140px;
+		position: relative;
+		transition: all 1s;
+
+		img {
+			image-rendering: -moz-crisp-edges;         /* Firefox */
+			image-rendering:   -o-crisp-edges;         /* Opera */
+			image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+			image-rendering: crisp-edges;
+			-ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+		}
+	}
+
+	a {
+		cursor: pointer;
+	}
+	span {
+		@include price-text;
+		position: relative;
+		top: 45px;
+	}
+}
+
+.panel {
+	position: fixed;
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	transition: all 1s;
+}
+
+.info-panel {
+	position: fixed;
+	top: 100%;
+	margin-left: 75px;
+	margin-top: 20px;
+	transition: all 1s;
+		
+	h1 {
+		margin: 0;
+		font-size: 1.5em;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	li {
+		font-weight: 100;
+	}
+}
