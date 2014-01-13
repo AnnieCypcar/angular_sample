@@ -1,18 +1,27 @@
 $(document).ready(function() {
-    $('#hamburger').on('click', function () {
-        $('nav').css({
-            'width': '200px',
-            'marginLeft': '0px'
-        });
 
-        $('.container').css('marginLeft', '200px');
+    function close_nav () {
+        $('nav').removeClass('navbar-opened');
+        $('.container').removeClass('navbar-opened');
+    }
+
+    function open_nav () {
+        $('nav').addClass('navbar-opened');
+        $('.container').addClass('navbar-opened');
+    }
+
+    $('#hamburger').on('click', function () {
+        if ($('nav').hasClass('navbar-opened')) {
+            close_nav();
+        } else {
+            open_nav();
+        }
 
         return false;
     });
 
     $('nav').on('click', function() {
-        $('.container').css('marginLeft', '0px');
-        $('nav').css('marginLeft', '-200px');
+        close_nav();
 
         return false;
     });

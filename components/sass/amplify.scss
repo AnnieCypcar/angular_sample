@@ -51,14 +51,14 @@ body {
 	position: relative;
 	white-space: nowrap;
 	height: 100%;
-	transition: margin 1s;
+	transition: all 1s;
 }
 
 .navbar {
 	header {
 	    position: fixed;
 	    width: 100%;
-	    z-index: 1;
+	    z-index: 99;
 	    background: $bgColor;
 	    height: 50px;
 
@@ -82,14 +82,14 @@ body {
 	}
 
 	nav {
-	    top: 0px;
 	    position: absolute;
-		margin-left: -200px;
-	    z-index: 999;
+	    top: 0px;
+	    left: -200px;
+	    z-index: 9;
 	    height: 100%;
-	    width: 0px;
 	    background: $bgColor;
-	    transition: margin 1s;	
+	    width: 200px;
+	    transition: all 1s;
 
 	    ul {
 			margin: 0;
@@ -112,7 +112,11 @@ body {
 			line-height: 2em;
 		}
 	}
+}
 
+.navbar-opened {
+	-webkit-transform: translate(200px);
+	transform: translate(200px);
 }
 
 .results {
